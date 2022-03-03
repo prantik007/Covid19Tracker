@@ -134,7 +134,7 @@ const Content = () => {
                 
                 
                 </tbody>
-                <p>Last Updated: {selectedCountryDetails.day} </p>
+                <p className="text-darkGreen text-base pl-2 font-medium">Last Updated: {selectedCountryDetails.day} </p>
                 </table>
                 
               </div>
