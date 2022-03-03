@@ -15,3 +15,13 @@
 .navbar>.links>ul>li:hover{
   color:#f0a04b;
 }
+table, th, td {
+  border: 1px solid #f0a04b;
+  border-collapse: collapse;
+}
+td{
+  padding: 0 10px 0 10px;
+  color: #183a1d;
+  width: 200px;
+  
+}

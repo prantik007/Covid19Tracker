@@ -63,13 +63,14 @@ const Content = () => {
   }, [selectedCountry]);
 
   return (
-    <div className="flex justify-center items-center bg-lightYellow h-screen">
-      <div className="main-content flex border-2 p-6">
+    <div className="flex flex-col justify-center items-center bg-lightYellow h-screen">
+      <div className="main-content flex-col justify-center items-center w-1/2">
         {isLoading ? (
-          <p> Loading...</p>
+           <p className="flex justify-center text-darkGreen text-2xl font-medium">Loading...</p>
         ) : (
           <>
-          <div>
+          <div className="flex justify-center items-center pb-2">
+          <p className="text-darkGreen text-2xl font-medium pr-2">Select Country:    </p>
             <select onChange={selectChangeHandler}>
               {countryList.map((country, index) => {
                 return <option key={index}>{country}</option>;
@@ -77,42 +78,65 @@ const Content = () => {
             </select>
             </div>
             {isLoadingCountryDetails ? (
-              <p> Loading... </p>
+              <p className="flex justify-center text-darkGreen text-2xl font-medium">Loading...</p>  
             ) : (
-              <div>
+              <div className="flex justify-center items-center">
+              <table className="justify-center table-auto w-26 ">
+              <thead>
+
+              </thead>
                 {console.log(selectedCountryDetails)}
+              <tbody className="p-4">
 
-                <p>Continent: {selectedCountryDetails.continent}</p>
-                <p>Country: {selectedCountryDetails["country"]} </p>
+              <tr><td>Continent: </td><td>{selectedCountryDetails.continent}</td></tr>
+              <tr><td>Country: </td><td>{selectedCountryDetails["country"]} </td></tr>
+                
+                
                 {/*Cases*/}
-                <p>Cases</p>
-                <p>
-                  Cases/million: {selectedCountryDetails?.cases?.["1M_pop"]}
-                </p>
-
-                <p>Active:{selectedCountryDetails?.cases?.active??"Not Available"}</p>
-                <p>Critical: {selectedCountryDetails?.cases?.critical??"Not Available"}</p>
-                <p>New Cases: {selectedCountryDetails?.cases?.new??"Not Available"}</p>
-                <p>Recovered: {selectedCountryDetails?.cases?.recovered??"Not Available"}</p>
-                <p>Total: {selectedCountryDetails?.cases?.total??"Not Available"}</p>
+               <p className="text-darkGreen text-2xl font-medium">Cases</p> 
+                
+                <tr><td>Cases/million:</td><td>{selectedCountryDetails?.cases?.["1M_pop"]??"Not Available"}</td></tr>
+                   
+                
+                  <tr><td>Active:</td><td>{selectedCountryDetails?.cases?.active??"Not Available"}</td></tr>
+                  <tr><td>Critical:</td><td>{selectedCountryDetails?.cases?.critical??"Not Available"}</td></tr>
+                  <tr><td>New Cases:</td><td>{selectedCountryDetails?.cases?.new??"Not Available"}</td></tr>
+                  <tr><td>Recovered: </td><td>{selectedCountryDetails?.cases?.recovered??"Not Available"}</td></tr>
+                  <tr><td>Total:</td><td>{selectedCountryDetails?.cases?.total??"Not Available"}</td></tr>
+                
+                 
+                 
+                
+                 
                 {/*Deaths*/}
-                <p>Deaths</p>
-                <p>
-                  Death/million: {selectedCountryDetails?.deaths?.["1M_pop"]??"Not Available"}
-                </p>
-                <p>New: {selectedCountryDetails?.deaths?.new??"Not Available"}</p>
-                <p>Total: {selectedCountryDetails?.deaths?.total??"Not Available"}</p>
+                <p className="text-darkGreen text-2xl font-medium"> Deaths</p>
+                
+                <tr><td>Death/million:</td><td>{selectedCountryDetails?.deaths?.["1M_pop"]??"Not Available"}</td></tr>
+                <tr><td>New: </td><td>{selectedCountryDetails?.deaths?.new??"Not Available"}</td></tr>
+                <tr><td>Total: </td><td>{selectedCountryDetails?.deaths?.total??"Not Available"}</td></tr>
+                   
+                
+                
+                
 
                 {/*Population*/}
-                <p>Population</p>
-                <p>{selectedCountryDetails?.population??"Not Available"}</p>
+                <p className="text-darkGreen text-2xl font-medium">Population</p>
+
+                <tr><td></td><td>{selectedCountryDetails?.population??"Not Available"}</td></tr>
+                
 
                 {/*Tests*/}
-                <p>Tests</p>
-                <p>
-                  Tests/million: {selectedCountryDetails?.tests?.["1M_pop"]??"Not Available"}
-                </p>
-                <p>Total: {selectedCountryDetails?.tests?.total??"Not Available"}</p>
+                <p className="text-darkGreen text-2xl font-medium">Tests</p>
+                
+                <tr><td>Tests/million:</td><td>{selectedCountryDetails?.tests?.["1M_pop"]??"Not Available"}</td></tr>
+                <tr><td>Total: </td><td>{selectedCountryDetails?.tests?.total??"Not Available"}</td></tr>
+                   
+                
+                
+                </tbody>
+                <p>Last Updated: {selectedCountryDetails.day} </p>
+                </table>
+                
               </div>
             )}
           </>
