@@ -6,11 +6,11 @@ const Navbar = () => {
   return (
     <div className="navbar flex justify-around items-center text-2xl bg-lightYellow h-1/3">
       <div className="logo mr-3 ">
-        <img className="w-28" src={logo} alt="logo" />
+        <img className="w-28 pl-2" src={logo} alt="logo" />
       </div>
       <div className="links flex ">
         <ul className="flex justify-center items-center">
-          <li>
+          <li className="">
             <Link to="/">Home</Link>
           </li>
           <li>

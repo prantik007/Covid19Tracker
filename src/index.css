@@ -10,4 +10,8 @@
 
 .navbar>.links>ul>li{
   padding: 15px;
+  color: #183a1d;
+}
+.navbar>.links>ul>li:hover{
+  color:#f0a04b;
 }
