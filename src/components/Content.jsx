@@ -27,6 +27,12 @@ const Content = () => {
       .then(function (response) {
         return response.data.response;
       })
+      .then((dataList)=>{
+        console.log(dataList)
+        let newList= dataList.filter((ctry)=>{return !ctry.includes(";")});
+        console.log(newList)
+        return newList
+      })
       .then((newData) => {
         setCountryList(newData);
       })
