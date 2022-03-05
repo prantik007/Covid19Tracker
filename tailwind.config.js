@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     colors: {
       yellow: "#f6c453",
-      lightYellow: "#fefbe9",
+      lightYellow: " #fddab4",
       orange: "#f0a04b",
       darkGreen: "#183a1d",
       lightGreen: "#e1eedd",
